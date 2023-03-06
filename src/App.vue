@@ -1,12 +1,11 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <router-link active-class="active" :to="{name:'Home'}">To Home|</router-link>
+  <router-link active-class="active" :to="{name:'About'}">To About|</router-link>
+  <!-- <router-link active-class="active" :to="{name:'CarView'}">To Car|</router-link> -->
   <router-view/>
 </template>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,9 +21,10 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.active {
+  color: green;
 }
 </style>
