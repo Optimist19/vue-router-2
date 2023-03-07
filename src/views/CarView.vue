@@ -1,5 +1,5 @@
 <template>
-  <div v-if = "cars">
+  <div v-if = "car">
    <h2>CARS</h2>
     <p>{{car.make}}</p>
     <p>{{car.body}}</p>
