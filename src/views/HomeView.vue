@@ -4,12 +4,13 @@
     <h3>Our Cars</h3>
     <div class="cards">
       <div class="card" v-for="car in cars" :key="car.id">
-        <router-link :to="{name: 'CarView', params:{id: car.id}}">
+        <!-- <router-link class-active="active" :to="`/car/${car.id}`">     alternative to line 8-->
+        <router-link class-active="active" :to="{name: 'CarView', params:{id: car.id}}">
           <h4>{{car.make}}</h4>
           <h4>${{car.price}}</h4>
         </router-link>
 
-        <!-- A programmatic routing/navigating should be used instead of the router-link(this makes it blue in color,since it is in form of an anchor tag) -->
+        <!-- A programmatic routing/navigating can also be used with the use od div tag instead of the router-link tag(this makes it blue in color,underlined, since it is in form of an anchor tag) but if you want to use the above method and want to style the router-link, in your css,use anchor tag(a) to select the router-link tag for styling -->
       </div>
     </div>
   </div>
@@ -32,6 +33,10 @@ export default {
 </script>
 
 <style scoped>
+.active{
+  text-decoration: none;
+  color: red
+}
 .cards {
   display: flex;
   width: 1000px;
@@ -54,8 +59,9 @@ export default {
   margin: 0 5px
 }
 
-router-link{
-  color:black
+a{
+  color:black;
+  text-decoration: none;
 }
 
 </style>
